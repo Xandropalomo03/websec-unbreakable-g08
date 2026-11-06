@@ -103,5 +103,12 @@
     "file": "app/Unbreakable.deps.json",
     "verdict": "echt-probleem",
     "reason": "Zelfde kwetsbaarheid als bij SCA (Newtonsoft.Json 12.0.1), nu door Trivy in de containerlagen gezien. De library serialiseert enkel uitgaande data, misbruikbaarheid is laag. Updaten naar 13.0.1 bij de volgende opdracht."
+  },
+  {
+    "tool": "container",
+    "id": "CVE-2026-109518",
+    "file": "library/unbreakable",
+    "verdict": "echt-probleem",
+    "reason": "Nieuwe HIGH-kwetsbaarheid in de apt-pakketten van het Ubuntu-basisimage, niet in onze eigen code. De app gebruikt apt niet tijdens het draaien en dit is een oefenopdracht met enkel testdata. Fix bestaat (apt 2.8.4ubuntu0.1). Oplossing later: basisimage bijwerken of apt-get upgrade in het Dockerfile."
   }
 ]
